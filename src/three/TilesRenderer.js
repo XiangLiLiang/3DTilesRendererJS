@@ -434,7 +434,8 @@ export class TilesRenderer extends TilesRendererBase {
 				0, 0, 0, 1
 			);
 			boxTransform.premultiply( transform );
-			boxTransformInverse.copy( boxTransform ).invert();
+			boxTransformInverse.copy( boxTransform );
+			boxTransformInverse.getInverse(boxTransformInverse);
 
 			// scale the box by the extents
 			box.min.set( - scaleX, - scaleY, - scaleZ );
