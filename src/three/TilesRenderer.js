@@ -316,7 +316,8 @@ export class TilesRenderer extends TilesRendererBase {
 		}
 
 		// extract scale of group container
-		tempMat2.copy( group.matrixWorld ).invert();
+		tempMat2.copy( group.matrixWorld )
+		tempMat2.getInverse(tempMat2);
 
 		let invScale;
 		tempVector.setFromMatrixScale( tempMat2 );
